@@ -38,14 +38,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-#include <bsd/string.h>
+// #include <bsd/string.h>
 
 int	main(void)
 {
 	const char *largestring = "Foo Bar Baz";
 	const char *smallstring = "Bar";
 
-	printf("%s\n", strnstr(largestring, smallstring, 10));
+	// printf("%s\n", strnstr(largestring, smallstring, 10));
 	printf("%s\n", ft_strnstr(largestring, smallstring, 10));
 
 	return (0);
