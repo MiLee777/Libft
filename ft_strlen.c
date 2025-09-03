@@ -6,17 +6,19 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 08:44:55 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/30 10:23:56 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:15:02 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *str) {
-    size_t i = 0;
+size_t	ft_strlen(const char *str)
+{
+	int i = 0;
 
-    while(str[i] != '\0') {
-        i++;
-    }
-    return i;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 09:39:24 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/31 14:35:13 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:38:24 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-#include <string.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char str[] = "Hello, World!";
-	printf("%s", strchr(str, 'e'));
-	printf("%c", '\n');
-	printf("%s", strchr(str, '\0'));
-	printf("%c", '\n');
-	printf("%s", ft_strchr(str, 'e'));
-	printf("%c", '\n');
-	printf("%s", strchr(str, '\0'));
-	printf("%c", '\n');
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[] = "Hello, World!";
+// 	printf("%s", strchr(str, 'e'));
+// 	printf("%c", '\n');
+// 	printf("%s", strchr(str, '\0'));
+// 	printf("%c", '\n');
+// 	printf("%s", ft_strchr(str, 'e'));
+// 	printf("%c", '\n');
+// 	printf("%s", strchr(str, '\0'));
+// 	printf("%c", '\n');
+// 	return (0);
+// }

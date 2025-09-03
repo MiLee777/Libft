@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 11:47:11 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/30 14:42:05 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:33:46 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < size - 1)
@@ -23,20 +23,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-
-	return i;
+	return (i);
 }
 
-#include <string.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char dest[30];
-	char src[] = "1111 2222 3333 4444";
+// int	main(void)
+// {
+// 	char dest[30];
+// 	char src[] = "1111 2222 3333 4444";
 
-	ft_strlcpy(dest, src, sizeof(dest));
-	printf("%s", dest);
-	printf("\n");
+// 	ft_strlcpy(dest, src, sizeof(dest));
+// 	printf("%s", dest);
+// 	printf("\n");
 
-	return (0);
-}
+// 	return (0);
+// }

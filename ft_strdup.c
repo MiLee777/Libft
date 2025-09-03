@@ -1,27 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/03 09:13:00 by mligai            #+#    #+#             */
+/*   Updated: 2025/09/03 09:13:00 by mligai           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
 	size_t	size;
 	char	*dest;
 
-	size = ft_strlen(src);
-	dest = (char *)malloc(size * sizeof(char) + 1);
+	if (s == NULL)
+		return (NULL);
+
+	size = ft_strlen(s);
+	dest = malloc(size + 1);
 	if (dest == NULL)
-		return (0);
-	ft_memcpy(dest, src, size);
-	dest[size] = '\0';
+		return (NULL);
+	ft_memcpy(dest, s, size + 1);
 	return (dest);
 }
- 
-#include <string.h>
-#include <assert.h>
-#include <stdlib.h>
- 
-int main(void)
-{
-    const char *s1 = "String";
-    char *s2 = strdup(s1);
-    assert(strcmp(s1, s2) == 0);
-    free(s2);
-}
+
+// #include <string.h>
+
+
+// int	main(void)
+// {
+// 	const char *s1 = "Hello, World!";
+// 	char *copy = ft_strdup(s1);
+
+// 	printf("orig: %s\ncopy: %s\n", s1, copy);
+// 	free(copy);
+// 	return 0;
+// }

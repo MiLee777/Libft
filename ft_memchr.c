@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 11:36:07 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/31 11:54:56 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:42:29 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*ptr = (const unsigned char *)s;
-	size_t				i;
+	int					i;
 
 	i = 0;
 	while (i < n)
@@ -29,13 +29,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-#include <string.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char str[] = "Hello, World!";
-	char *found = ft_memchr(str, 'e', strlen(str));
-	printf("%s\n", found);
+// int	main(void)
+// {
+// 	char str[] = "Hello, World!";
+// 	char *found = ft_memchr(str, 'e', strlen(str));
+// 	printf("%s\n", found);
 
-	return (0);
-}
+// 	return (0);
+// }

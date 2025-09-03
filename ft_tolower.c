@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 15:15:17 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/30 15:16:18 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:37:16 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-#include <ctype.h>
+// #include <ctype.h>
 
-int	main(void)
-{
-	printf("%c", ft_tolower('A'));
-	printf("\n");
-	printf("%c", ft_tolower('I'));
-	printf("\n");
-	printf("%c", ft_tolower('M'));
-	printf("\n");
-	printf("%c", ft_tolower('Z'));
-	printf("\n");
+// int	main(void)
+// {
+// 	printf("%c", ft_tolower('A'));
+// 	printf("\n");
+// 	printf("%c", ft_tolower('I'));
+// 	printf("\n");
+// 	printf("%c", ft_tolower('M'));
+// 	printf("\n");
+// 	printf("%c", ft_tolower('Z'));
+// 	printf("\n");
 
-	return (0);
-}
+// 	return (0);
+// }

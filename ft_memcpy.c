@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 11:07:11 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/30 14:09:49 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:30:45 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;
-	size_t			i;
+	int				i;
 
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
@@ -28,17 +28,17 @@ void	ft_memcpy(void *dest, const void *src, size_t n)
 	}
 }
 
-#include <string.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char dest[] = "Hello 123123123123";
-	char src[] = "1111 2222 3333 4444";
+// int	main(void)
+// {
+// 	char dest[] = "Hello 123123123123";
+// 	char src[] = "1111 2222 3333 4444";
 
-	memcpy(src + 5, src, 20);
+// 	memcpy(src + 5, src, 20);
 
-	printf("%s", src);
-	printf("\n");
+// 	printf("%s", src);
+// 	printf("\n");
 
-	return (0);
-}
+// 	return (0);
+// }

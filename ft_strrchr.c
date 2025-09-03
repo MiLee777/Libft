@@ -6,7 +6,7 @@
 /*   By: mligai <mligai@student.42bangkok.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 10:37:27 by mligai            #+#    #+#             */
-/*   Updated: 2025/08/31 10:48:47 by mligai           ###   ########.fr       */
+/*   Updated: 2025/09/03 09:39:31 by mligai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int		i;
 	char	*last;
 
 	i = 0;
@@ -34,18 +34,18 @@ char	*ft_strrchr(const char *s, int c)
 	return (last);
 }
 
-#include <string.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char str[] = "Hello, Weorld!";
-	printf("%s", strrchr(str, 'o'));
-	printf("%c", '\n');
-	printf("%s", strrchr(str, '\0'));
-	printf("%c", '\n');
-	printf("%s", ft_strrchr(str, 'o'));
-	printf("%c", '\n');
-	printf("%s", ft_strrchr(str, '\0'));
-	printf("%c", '\n');
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[] = "Hello, Weorld!";
+// 	printf("%s", strrchr(str, 'o'));
+// 	printf("%c", '\n');
+// 	printf("%s", strrchr(str, '\0'));
+// 	printf("%c", '\n');
+// 	printf("%s", ft_strrchr(str, 'o'));
+// 	printf("%c", '\n');
+// 	printf("%s", ft_strrchr(str, '\0'));
+// 	printf("%c", '\n');
+// 	return (0);
+// }
