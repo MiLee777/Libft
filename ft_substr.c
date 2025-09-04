@@ -15,20 +15,32 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	int		s_len;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);
+
 	s_len = ft_strlen(s);
-	if (start + len > s_len)
+
+	if (start >= s_len)
 	{
-		len = s_len - start;
+		substr = malloc(1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
 	}
+
+	if (start + len > s_len)
+		len = s_len - start;
+
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
+
 	ft_memcpy(substr, s + start, len);
 	substr[len] = '\0';
+
 	return (substr);
 }
 

@@ -13,42 +13,60 @@
 
 #include "libft.h"
 
+int	ft_isspace(char c)
+{
+	return (c == 32 || (c >= 9 && c <= 13));
+}
+
+int	ft_get_sign(const char *nptr, int *i)
+{
+	int	sign;
+
+	sign = 1;
+	if (nptr[*i] == '-')
+	{
+		sign = -1;
+		(*i)++;
+	}
+	else if (nptr[*i] == '+')
+		(*i)++;
+	return (sign);
+}
+
+unsigned long	ft_str_to_num(const char *nptr, int *i)
+{
+	unsigned long	result;
+
+	result = 0;
+	while (ft_isdigit(nptr[*i]))
+	{
+		result = result * 10 + (nptr[*i] - '0');
+		(*i)++;
+	}
+	return (result);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int					i;
 	int					sign;
-	unsigned long int	result;
+	unsigned long		result;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-
-	while (nptr[i] == 32 || nptr[i] >= 9 && nptr[i] <= 13)
+	while (ft_isspace(nptr[i]))
 		i++;
-	if (nptr[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-
-	while (ft_isdigit(nptr[i]))
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
+	sign = ft_get_sign(nptr, &i);
+	result = ft_str_to_num(nptr, &i);
+	return ((int)(result * sign));
 }
 
-// int	main(void)
-// {
-// 	printf("%i\n", ft_atoi(" -123junk"));  // -123
-// 	printf("%i\n", ft_atoi(" +321dust"));  // 321
-// 	printf("%i\n", ft_atoi("0"));          // 0
-// 	printf("%i\n", ft_atoi("0042"));       // 42
-// 	printf("%i\n", ft_atoi("0x2A"));       // 0
-// 	printf("%i\n", ft_atoi("junk"));       // 0
-// 	printf("%i\n", ft_atoi("2147483648")); //  -2147483648
-// }
+int	main(void)
+{
+	printf("%i\n", ft_atoi(" -123junk"));  // -123
+	printf("%i\n", ft_atoi(" +321dust"));  // 321
+	printf("%i\n", ft_atoi("0"));          // 0
+	printf("%i\n", ft_atoi("0042"));       // 42
+	printf("%i\n", ft_atoi("0x2A"));       // 0
+	printf("%i\n", ft_atoi("junk"));       // 0
+	printf("%i\n", ft_atoi("2147483648")); //  -2147483648
+}

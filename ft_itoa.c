@@ -12,54 +12,70 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static size_t ft_numlen(long n)
 {
-	long	num;
-	int		neg;
-	int		len;
-	long	temp;
-	char	*str;
-	int		i;
+  size_t len;
 
-	num = n;
-	neg = (num < 0);
-	if (neg)
-		num = -num;
-	len = 1;
-	temp = num;
-	while (temp /= 10)
-		len++;
-	str = malloc(len + neg + 1);
-	if (!str)
-		return (NULL);
-	str[len + neg] = '\0';
-	i = len + neg - 1;
-	while (i >= neg)
-	{
-		str[i] = (num % 10) + '0';
-		num /= 10;
-		i--;
-	}
-	if (neg)
-		str[0] = '-';
-	return (str);
+  len = 1;
+  while (n /= 10)
+    len++;
+  return (len);
 }
 
-int	main(void)
+static void ft_fill_digits(char *str, long num, size_t len, int neg)
 {
-	int		number;
-	char	*str;
+  size_t i;
 
-	number = -4567;
-	str = ft_itoa(number);
-	if (str != NULL)
-	{
-		printf("Result: %s\n", str); // -4567
-		free(str);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return (0);
+  i = len + neg - 1;
+  while ((int)i >= neg)
+  {
+    str[i] = (num % 10) + '0';
+    num /= 10;
+    i--;
+  }
+  if (neg)
+    str[0] = '-';
+}
+
+char *ft_itoa(int n)
+{
+  long num;
+  int neg;
+  size_t len;
+  char *str;
+
+  num = n;
+  neg = (num < 0);
+  if (neg)
+    num = -num;
+
+  len = ft_numlen(num);
+
+  str = malloc(len + neg + 1);
+  if (!str)
+    return (NULL);
+  str[len + neg] = '\0';
+
+  ft_fill_digits(str, num, len, neg);
+
+  return (str);
+}
+
+int main(void)
+{
+  int number;
+  char *str;
+
+  number = -4567;
+  str = ft_itoa(number);
+  if (str != NULL)
+  {
+    printf("Result: %s\n", str); // -4567
+    free(str);
+  }
+  else
+  {
+    printf("Memory allocation failed.\n");
+  }
+  return (0);
 }
